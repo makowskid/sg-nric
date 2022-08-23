@@ -1,6 +1,7 @@
 # sg-nric
 
-Singapore NRIC (National Registration Identity Card) validator package
+Singapore NRIC (National Registration Identity Card) or FIN (Foreign Identification Number) validator package
+
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/makowskid/sg-nric.svg?style=flat-square)](https://packagist.org/packages/makowskid/sg-nric)
@@ -15,8 +16,19 @@ composer require makowskid/sg-nric
 
 ## Usage
 
-Write a few lines about the usage of this package.
+```bash
+$validator = new \makowskid\SgNric\SgNricValidator();
 
+if($validator->isNricValid($theNric)) ..
+
+//or 
+
+
+if($validatator->isFinValid($theNric)) ..
+
+// or use the defined `sg-nric` facade
+
+```
 
 ## Testing
 
