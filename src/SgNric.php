@@ -1,6 +1,6 @@
 <?php
 
-namespace makowskid\SgNric;
+namespace Makowskid\SgNric;
 
 /**
  * Class SgNricValidator
@@ -8,21 +8,15 @@ namespace makowskid\SgNric;
  * @author  Dawid Makowski <dawid.makowski@gmail.com>
  * @author  Marshall Jones <marshall@offby3.com> https://github.com/mjallday
  */
-class SgNricValidator
+class SgNric
 {
 
-    /**
-     * SgNricValidator constructor.
-     */
-    public function __construct()
-    {
-    }
 
     /**
      * @param $theNric
      * @return bool
      */
-    public function isNricValid($theNric)
+    public function isNricValid($theNric): bool
     {
 
         $multiples = array(2, 7, 6, 5, 4, 3, 2);
@@ -37,7 +31,6 @@ class SgNricValidator
 
         $total = 0;
         $count = 0;
-        $numericNric = 0;
 
         $first = $theNric[0];
         $last = $theNric[strlen($theNric) - 1];
@@ -59,11 +52,10 @@ class SgNricValidator
             $numericNric = floor($numericNric);
         }
 
-        $outputs = '';
         if (strcmp($first, "S") == 0) {
             $outputs = ['J', 'Z', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
         } else {
-            $outputs = array['G', 'F', 'E', 'D', 'C', 'B', 'A', 'J', 'Z', 'I', 'H'];
+            $outputs = ['G', 'F', 'E', 'D', 'C', 'B', 'A', 'J', 'Z', 'I', 'H'];
         }
 
         return $last == $outputs[$total % 11];
@@ -74,7 +66,7 @@ class SgNricValidator
      * @param $fin
      * @return bool
      */
-    public function isFinValid($fin)
+    public function isFinValid($fin): bool
     {
         $multiples = [2, 7, 6, 5, 4, 3, 2];
         if (!$fin || $fin == '') {
@@ -87,7 +79,6 @@ class SgNricValidator
 
         $total = 0;
         $count = 0;
-        $numericNric = 0;
         $first = $fin[0];
         $last = $fin[strlen($fin) - 1];
 
@@ -107,8 +98,6 @@ class SgNricValidator
             $numericNric /= 10;
             $numericNric = floor($numericNric);
         }
-
-        $outputs = array();
 
         if (strcmp($first, 'F') == 0) {
             $outputs = ['X', 'W', 'U', 'T', 'R', 'Q', 'P', 'N', 'M', 'L', 'K'];

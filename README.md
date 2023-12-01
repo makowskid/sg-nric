@@ -1,6 +1,6 @@
 # sg-nric
 
-Singapore NRIC (National Registration Identity Card) or FIN (Foreign Identification Number) validator package
+PHP Singapore NRIC (National Registration Identity Card) or FIN (Foreign Identification Number) validator package
 
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -17,27 +17,16 @@ composer require makowskid/sg-nric
 ## Usage
 
 ```bash
-$validator = new \makowskid\SgNric\SgNricValidator();
+$validator = new \Makowskid\SgNric\SgNric();
 
 if($validator->isNricValid($theNric)) ..
 
 //or 
 
-
 if($validatator->isFinValid($theNric)) ..
 
-// or use the defined `sg-nric` facade
 
 ```
-
-## Testing
-
-Run the tests with:
-
-```bash
-vendor/bin/phpunit
-```
-
 
 ## Contributing
 
