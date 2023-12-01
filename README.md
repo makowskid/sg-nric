@@ -1,4 +1,4 @@
-# sg-nric
+# sg-nric: PHP Singapore NRIC/FIN validator
 
 PHP Singapore NRIC (National Registration Identity Card) or FIN (Foreign Identification Number) validator package
 
@@ -17,14 +17,22 @@ composer require makowskid/sg-nric
 ## Usage
 
 ```bash
-$validator = new \Makowskid\SgNric\SgNric();
 
-if($validator->isNricValid($theNric)) ..
+use Makowskid\SgNric\SgNric;
 
-//or 
+$validator = new SgNric();
 
-if($validatator->isFinValid($theNric)) ..
+if ($validator->isNricValid($theNric)) {
+    // NRIC is valid
+    // Your code here...
+}
 
+// OR
+
+if ($validator->isFinValid($theFin)) {
+    // FIN is valid
+    // Your code here...
+}
 
 ```
 
